@@ -45,7 +45,7 @@ public class PaginacionControlador extends HttpServlet {
 			personas.add(p);
 		}
 		
-		//2. Definir las variables necesarias para la paginaciÛn.
+		//2. Definir las variables necesarias para la paginaci√≥n.
 		int paginaActual = 0;
 		int totalPaginas = 0;
 		int totalResultados = personas.size();
@@ -53,11 +53,11 @@ public class PaginacionControlador extends HttpServlet {
 		int indice = 0;
 		
 		
-		//3. Obtener la p·gina actual (Seleccionada por el usuario).
+		//3. Obtener la p√°gina actual (Seleccionada por el usuario).
 		try {
 			paginaActual = Integer.parseInt(request.getParameter("pagina"));
 		} catch (Exception ex) {
-			paginaActual = 1; //Si el usuario no envÌa p·gina o envÌa par·metros invalidos, se comienza desde la p·gina 1.
+			paginaActual = 1; //Si el usuario no env√≠a p√°gina o env√≠a par√°metros invalidos, se comienza desde la p√°gina 1.
 		}		
 		
 		try {			
@@ -74,7 +74,7 @@ public class PaginacionControlador extends HttpServlet {
 			pw.println("<th>Edad</th>");
 			pw.println("</tr>");
 			
-			//5. Pintar las celdas con los registros especificados (Facilmente podrÌan ser Cards).
+			//5. Pintar las celdas con los registros especificados (Facilmente podr√≠an ser Cards).
 			int contador = 0;
 			for (Persona p : personas) {
 				
@@ -93,14 +93,14 @@ public class PaginacionControlador extends HttpServlet {
 			
 			pw.println("</table>");
 			
-			//6. Calcular el total de p·ginas necesarias.
+			//6. Calcular el total de p√°ginas necesarias.
 			totalPaginas = totalResultados / resultadosPorPagina;
 			
-			if (totalResultados > totalPaginas * resultadosPorPagina) { //Verificando si se van a necesitar m·s p·ginas.
+			if (totalResultados > totalPaginas * resultadosPorPagina) { //Verificando si se van a necesitar m√°s p√°ginas.
 				totalPaginas++;
 			}
 			
-			//7. Crear el men˙ de paginaciÛn (Permite seleccionar la p·gina y en base a eso el servlet calcula desde que registro comenzar a mostrar).
+			//7. Crear el men√∫ de paginaci√≥n (Permite seleccionar la p√°gina y en base a eso el servlet calcula desde que registro comenzar a mostrar).
 			for (int i = 1; i <= totalPaginas; i++) {
 				pw.println("<b><a href='PaginacionControlador?pagina=" + i + "'>" + i + "</a></b>");
 				pw.println("&nbsp;&nbsp;&nbsp;&nbsp;");
