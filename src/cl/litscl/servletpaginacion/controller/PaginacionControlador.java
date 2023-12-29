@@ -52,7 +52,6 @@ public class PaginacionControlador extends HttpServlet {
 		int resultadosPorPagina = 5;
 		int indice = 0;
 		
-		
 		//3. Obtener la página actual (Seleccionada por el usuario).
 		try {
 			paginaActual = Integer.parseInt(request.getParameter("pagina"));
@@ -77,7 +76,6 @@ public class PaginacionControlador extends HttpServlet {
 			//5. Pintar las celdas con los registros especificados (Facilmente podrían ser Cards).
 			int contador = 0;
 			for (Persona p : personas) {
-				
 				if (contador >= indice) {
 					if (contador - indice == resultadosPorPagina) {
 						break;
