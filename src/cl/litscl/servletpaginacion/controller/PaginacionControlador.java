@@ -32,7 +32,6 @@ public class PaginacionControlador extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		//1. Obtener los registros necesarios (En un entorno real se deben conseguir desde la BD).
 		List<Persona> personas = new ArrayList<Persona>();
 		
